@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deze</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <!-- the loadCommentsCiology function, works like its chemistry comments counterpart - where onload - the local storage is checked for any comments and any comments in it are displayed -->
+  <body onload="loadCommentsBiology()">
+    <header>
+        <section id="logoAndPicture">
+            <h2>Science<span>Hub</span></h2>
+            <img id="websiteLogo" src="https://cdn.pixabay.com/photo/2018/03/21/07/16/learning-3245792_960_720.jpg">
+        </section>
+        <nav id="nav-bar" >
+            <!-- list, with each item being a nav to a section of the page navigation class is used keep the list items together in a flex box, with centered content-->
+            <ul id="nav-list" class="navigation">
+                <li><a id="homeNav" class="nav-links" href="index.html">Home</a></li>
+                <li><a id="biologyNav" class="nav-links" href="#">Biology</a></li>
+                <li><a id="chemistryNav" class="nav-links" href="chemistry.html">Chemistry</a></li>
+                <li><a id="aboutMeNav" class="nav-links" href="aboutMe.html">About me</a></li>
+                <li><a id="savedArticlesNav" class="nav-links" href="savedArticles.html">Saved Articles</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <!-- introduction block for the page -->
+        <section class="introduction">
+            <h1>What Is Biology?</h1>
+            <hr>
+            <p>
+                Simply put, Biology is the scientific study of life.
+                <br>
+                <br>
+                Biology studies how processes in organisms work, by setting hypotheses and then testing those hypotheses by carrying out experiments. Bit by bit, humanity has gone a long way and its understanding of Biology and how does life function.
+                <br>
+                <br>
+                Knowledge and advancements in Biology, have allowed us to not only sate our curiousity, solve philosophical dilemmas, but perhaps most importantly - allow us to overcome our fragile nature, by the creation of medicine, whereby billions of people throughout humanity's history have been saved in situations, where lack of such knowledge would otherwise have been fatal.
+            </p>
+        </section>
+    <!--this section contains the biology content, comprised of 4 divs, with id of content-title and cb1/2/3, the biology content section that holds them all
+    has a display grid, where the grid consits of 3 columns and 2 rows; the content title is spread accross the whole of the first row and the other 3 are spread in equal
+    columns on the second row-->
+
+    <!-- within each of the 4 divs, there is an innder div that holds the texual information (a h3 and a paragraph)-->
+        <section class="biology-content">
+            <div id="content-title"><h2>DISCOVER BIOLOGY [hover]</h2></div>
+            <div id="cb1" class="content-box">
+                <div class="content-holder">
+                    <h3>Did Humans Evolve<br>From Monkeys?</h3>
+                    <p>Where did we, humans came from, has been a question asked for milenias. 
+                        <br>
+                        <br>
+                        Why are we so different compared to other primates and how did they become what they are, and we - what we are?
+                        <br>
+                        <br>
+                        Moreover - why are all beings the way they are - did birds always have wings and beaks? why do we have hairs, while others - scales. Were these characteristics always such, or did they come in due time and did they change many times before they became what they are today?
+                        <br>
+                        <br>
+                        These are all questions that Biology searches answers for - and engaging in these studies will get you much closer to those answers!
+                        <br>
+                        <br>
+                        <br>
+                        Feel free to check <a target="_blank" href="https://www.youtube.com/watch?v=-EupHP3rzBI">this video</a> for some insights (ORIGINAL CONTENT!).
+                    </p>
+                </div>
+            </div>
+            <div id="cb2" class="content-box">
+                <div class="content-holder">
+                    <h3>What Is Consciousness?</h3>
+                    <p>I think, therefore I am. - But why do you think? Or rather, why <em>can</em> you think?
+                        <br>
+                        <br>
+                        Our brains contain more than <u>80 billion</u> neurons. It consumes around 20% of the energy we use, whilist being less than 5% of the body's total mass. 
+                        <br>
+                        <br>
+                        Have you ever questioned, why can we recognize shapes, colours, sounds and other patterns as well as the information they hold? We take these abilities for granted, but the truth is that the brain is an engineering marvel of nature and it works in an extraordinary way to allow us to experience reality as we do.
+                        <br>
+                        <br>
+                        Is consciousness just simply a massive number of electrical signals going through our heads, or is there ever something more to it?
+                        <br>
+                        <br>
+                        <br>
+                        Professor Sapolsky, from Standard University offers some insights, in his lecture series at <a target="_blank" href="https://www.youtube.com/watch?v=NNnIGh9g6fA&list=PL848F2368C90DDC3D">this link</a>.
+                </div>
+            </div>
+            <div id="cb3" class="content-box"><div class="content-holder">
+                <h3>A Whole New World<br>Beyond Our Sight?</h3>
+                    <p>Microbiology - if not for recent technology allowing us to see detect it, we would never even be able to comprehend it.
+                        <br>
+                        <br>
+                        Living organisms can get to sizes far smaller than we can even comprehend, where life at these scales is only detectable by today's technology.
+                        <br>
+                        <br>
+                        A whole microcosmos, full of organisms is flourishing at every momenet and second, at almost every surface, from your face, to your feet. All of these microorganisms have proven to be vital in maintaining the balance of life and while then can get a bad rep, such as being associated with disease, as we learn about microorganisms, we get to understand their role in our wellbeing too.
+                        <br>
+                        <br>
+                        Technology has only allowed us to take a peek into into microbiology for the last centuries - there is so much more to learn!
+                        <br>
+                        <br>
+                        <br>
+                        Discover more about this tiny world using <a target="_blank" href="https://microbiologysociety.org/why-microbiology-matters/what-is-microbiology.html#:~:text=Microbiology%20is%20the%20study%20of,collectively%20known%20as%20'microbes'.">this link</a>.
+            </div></div>
+        </section>
+        <!-- comments section, containing a form with single input box (text) + its submit button, following this, is another section with the posted comments -->
+        <section class="commentSection">
+            <!-- form has disabled submission on enter press,
+            in js, enter is used to submit a comment (alongside the comment button)
+        by disabling this option - it allows to submit a comment by pressing enter (as form isn;t submitted and page reset)-->
+            <form onkeypress="return event.keyCode != 13">
+                <label for="comment">
+                    <input type="text" placeholder="Add a comment...">
+                    <button type="button" class="submitCommentButton">Comment</button>
+                </label>
+            </form>
+            <h2>Comments:</h2>
+            <div class="comments"></div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+  <footer></footer>
+</html>

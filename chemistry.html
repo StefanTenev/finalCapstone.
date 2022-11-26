@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deze</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <!-- loadCommentsChemistry and loadLikes are 2 functions that check the given comments/likes and when on page load - upload either to their current values and display them on screen-->
+  <body onload="loadCommentsChemistry();loadLikes();">
+    <header>
+        <section id="logoAndPicture">
+            <h2>Science<span>Hub</span></h2>
+            <img id="websiteLogo" src="https://cdn.pixabay.com/photo/2018/03/21/07/16/learning-3245792_960_720.jpg">
+        </section>
+        <nav id="nav-bar" >
+            <!-- list, with each item being a nav to a section of the page navigation class is used keep the list items together in a flex box, with centered content-->
+            <ul id="nav-list" class="navigation">
+                <li><a id="homeNav" class="nav-links" href="index.html">Home</a></li>
+                <li><a id="biologyNav" class="nav-links" href="biology.html">Biology</a></li>
+                <li><a id="chemistryNav" class="nav-links" href="#">Chemistry</a></li>
+                <li><a id="aboutMeNav" class="nav-links" href="aboutMe.html">About me</a></li>
+                <li><a id="savedArticlesNav" class="nav-links" href="savedArticles.html">Saved Articles</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- introduction block for the page -->
+        <section class="introduction">
+            <h1>What Is Chemistry?</h1>
+            <hr>
+            <p>
+                Chemistry studies the properties of different matter, also known as elements, as well as their behaviour during change.
+                <br>
+                <br>
+                Within the major 3 (Physics - Chemistry - Biology), Chemistry helps to connect the world of Physics and Biology, as it takes the fundamental particle knowledge in Physics, and studies its application, such as in the structure of DNA.
+                <br>
+                <br>
+                Just like Biology, Chemistry has been a major contributor to development of modern medicine, as well as our understanding of many processes which were previously a mystery, such as identifying the molecules in your brain that allow you to stay focused and read this very line!
+                <br>
+                Its effects are far-reaching in both, our daily lives and in the world of inovation, beyond our current reach.
+            </p>
+        </section>
+        <!-- table containing chemistry articles, the table has 6 columns, but only the FIRST 3 of them are used for the actual informaiton, the rest are used for utility - e.g. for likes and saves -->
+        <table class="chemistry-articles-table">
+            <caption><h2>Discover Chemistry</h2></caption>
+            <thead>
+            <tr>
+                <!-- as shown above - there are 3 columns used for info - 3 headers are given for those columns, an unstyled "LIKES" header is also used for the likes column -->
+                <!-- the columns used for utility rather than info are with a "noStlye" class - where their table style is taken off -->
+                <th>Article</th>
+                <th>Link</th>
+                <th>Date of Release</th>
+                <th class="likesHeader">LIKES</th>
+            </tr>
+            </thead>
+            <tbody>
+                <!-- 1st row -->
+            <tr>
+                <td class="articleTitle">New insights into energy loss open doors for one up-and-coming solar tech</td>
+                <td class="articleLink"><a target="_blank" href="https://www.sciencedaily.com/releases/2022/11/221118114819.htm">Click me!</a></td>
+                <td>November 18, 2022</td>
+                <td class="noStyle likes">0</td>
+                <td class="noStyle"><button class="likeButton">Like 👍</button></td>
+                <td class="noStyle"><button class="saveButton" value="save">Save</button></td>
+            </tr>
+            <!-- 2nd row -->
+            <tr>
+                <td class="articleTitle">Molecules change their behaviors under a polariton leader</td>
+                <td class="articleLink"><a target="_blank" href="https://www.sciencedaily.com/releases/2022/11/221117141651.htm">Click me!</a></td>
+                <td>November 17, 2022</td>
+                <td class="noStyle likes">0</td>
+                <td class="noStyle"><button class="likeButton">Like 👍</button></td>
+                <td class="noStyle"><button class="saveButton" value="save">Save</button></td>
+            </tr>
+            <!-- 3rd row -->
+            <tr>
+                <td class="articleTitle">Machine learning overcomes human bias in the discovery of self-assembling peptides</td>
+                <td class="articleLink"><a target="_blank" href="https://www.nature.com/articles/s41557-022-01055-3">Click me!</a></td>
+                <td>October 31, 2022</td>
+                <td class="noStyle likes">0</td>
+                <td class="noStyle"><button class="likeButton">Like 👍</button></td>
+                <td class="noStyle"><button class="saveButton" value="save">Save</button></td>  
+            </tr>
+            <!-- 4th row -->
+            <tr>
+                <td class="articleTitle">A way to snap molecules together like Lego wins 2022 chemistry Nobel</td>
+                <td class="articleLink"><a target="_blank" href="https://www.sciencenews.org/article/bioorthogonal-chemists-bertozzi-meldal-sharpless-win-2022-chemistry-nobel">Click me!</a></td>
+                <td>October 5, 2022</td>
+                <td class="noStyle likes">0</td>
+                <td class="noStyle"><button class="likeButton">Like 👍</button></td>
+                <td class="noStyle"><button class="saveButton" value="save">Save</button></td>
+            </tr>
+            <!-- 5th row -->
+            <tr>
+                <td class="articleTitle">Total synthesis of structurally diverse pleuromutilin antibiotics</td>
+                <td class="articleLink"><a target="_blank" href="https://www.nature.com/articles/s41557-022-01027-7">Click me!</a></td>
+                <td>September 26, 2022</td>
+                <td class="noStyle likes">0</td>
+                <td class="noStyle"><button class="likeButton">Like 👍</button></td>
+                <td class="noStyle"><button class="saveButton" value="save">Save</button></td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- comments section, containing a form with single input box (text) + its submit button, following this, is another section with the posted comments -->
+        <section class="commentSection">
+            <!-- form has disabled submission on enter press,
+            in js, enter is used to submit a comment (alongside the comment button)
+        by disabling this option - it allows to submit a comment by pressing enter (as form isn;t submitted and page reset)-->
+            <form onkeypress="return event.keyCode != 13">
+                <label for="comment">
+                    <input type="text" placeholder="Add a comment...">
+                    <button type="button" class="submitCommentButton">Comment</button>
+                </label>
+            </form>
+            <section id="postedComments">
+                <h2>Comments:</h2>
+                <div class="comments"></div>
+            </section>
+        </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+  <footer></footer>
+</html>
+

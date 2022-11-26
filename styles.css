@@ -1,0 +1,401 @@
+/*
+Preferrably, the styling for each page would be separate, however, for the reviewer's ease, (so to not download 10 files),
+I have included everything here, I have instead however, tried to comment each separate section so that
+they can be separated
+*/
+
+/* some variable setting, which will be used throughout */
+:root{
+ --background: rgb(10, 10, 7);
+ --boxShadow: 0 0 1rem 0.1rem rgb(28, 28, 28);
+ --mainDimmerText: rgb(208, 208, 208);
+}
+/* body, some extra padding added on the bottom to be able to have the page's content in the center of the screen, as you reach the bottom of the page*/
+body{
+   margin: 0;
+   background-color: var(--background);
+   padding-bottom: 5vw;
+}
+
+/* header styling, which was used for the nav-panel */
+header{
+    display: flex;
+    border-bottom: ridge 1px rgb(31, 31, 31);
+    background-color: black;    
+    width: 100%;
+    height: 4rem;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 1rem 4rem 1rem black;
+}
+/* extra positional styling for the nav links (the li elements), the .navigation is a class given to their parent (the ul) */
+.navigation{ 
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    margin-right: 10%;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+}
+/* styling for the nav links and some detransitioning (from their hover state) */
+.nav-links{
+    text-decoration: none;
+    font-size: 150%;
+    padding: 1.2rem;
+    color: white;
+    white-space: nowrap;
+    transition: cubic-bezier(0.83, 0, 0.17, 1) 0.5s;
+    transition: all, 0.7s ;
+    box-shadow: inset 0 0 1rem 0 #b7a126;
+    border-radius: 0.5rem;
+}
+/* some transition animations on hover of the nav links */
+.nav-links:hover{
+    background-color: rgb(0, 0, 0);
+    box-shadow: inset 0 -3rem  0 0.3rem #aa3131; 
+    transition: cubic-bezier(0.83, 0, 0.17, 1) 0.25s;
+    transition: all, 0.25s ;
+    
+    border-radius: 2rem;     
+    
+}
+ /* this is the lamp picture at the top left of the header */
+#websiteLogo{
+    width: 8rem; 
+    border-radius: 50%;
+}
+/* container for both the picture and the text (scienceHub) */
+#logoAndPicture{
+    display: flex;
+    color: white;
+}
+/* styling for the span around the Hub - in the website title*/
+#logoAndPicture span {
+    background-color: rgb(197, 114, 26);
+    margin: 0.1rem;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
+/* a class for the images in the image slideshow - just simple width/height and a cover for the image to fit appropriately */
+.rotatingImages{
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.main-slide-container{
+    width: 100%;
+    overflow: hidden;
+}
+.slide-flexbox {
+    display: flex;
+    width: 100%;
+}
+/* styling for the line holding the quite below the image slideshow, a bit of shadow is given to fill give a subtle gap fill during image transitioning */
+.below-image-gap{
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    box-shadow: 0 -0.5rem 3rem 0.5rem black;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+.below-image-gap h2{
+    font-size: 1.5rem;
+}
+/* blank image set to hidden at all times */
+.blank{
+    visibility: hidden;
+}
+/* introduction class given to the intros in 3/5 pages - simple black box with a font and text-color */
+.introduction{
+    width: 80%;
+    margin: 4rem auto;
+    background-color: black;
+    border-radius: 0.5rem;
+    color: var(--mainDimmerText);
+    padding: 1rem 5rem;
+    font-size: 150%;
+    line-height: 2rem;
+    box-shadow: var(--boxShadow);
+    font-family:'Gill Sans', 'Gill Sans MT', sans-serif;
+}   
+
+/* BIOLOGY CONTENT START */
+
+/* the main parent element for the biology content, items held in a grid with 3 columns and 2 rows, first item spreads
+accross the 3 columns of the first row, whereas the lower row is occupied equally with an item in each column */
+
+/* overflow set to hidden so items can be cutout - as they will transition and expand upon hover */
+.biology-content{
+    width: 80%;
+
+    margin: 4rem auto;
+    color: white;
+    padding: 1rem 5rem;
+    font-size: 120%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* sets all the divs of an equal width, height and gives them an equal detransition after hover */
+.biology-content div{
+   width: 30vw;
+
+   height: 40rem;
+   background-color: black;
+   transition: all, 1.5s
+}
+
+/* this is the item that spans accross the 3 columns on the first row - just a title container with some styling */
+.biology-content #content-title{
+    justify-self: center;
+    width: 90vw;
+    height: 5rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 2rem 1rem black;
+}
+/* subtle white border given to ALL of the content items - to keep a visual separation between the 3 */
+.biology-content .content-box{
+    border: solid 1px white;
+    border-bottom: none;
+    overflow: hidden;
+}
+.biology-content .content-box div {
+    margin: 2rem;
+}
+/* each of the info items will originally be 3 times their size (the size of the grid container), and will hide, only expanding on hover
+each of these stylings which will be same for each are declared together here to avoid repetition, but url links are speparate
+*/
+.biology-content #cb1, #cb2, #cb3{
+    background-repeat: no-repeat;
+    background-size: 90vw;
+    object-fit: cover;
+}
+/* url for the packground image of each grid item */
+.biology-content #cb1{
+    background-image: url("https://www.history.com/.image/ar_233:100%2Cc_fill%2Ccs_srgb%2Cg_faces:center%2Cq_auto:good%2Cw_1920/MTcwOTI1NjE4NDA0MjcxMjQ4/human-evolution-gettyimages-122223741.webp");
+}
+.biology-content #cb2{
+    background-image: url("https://www.verywellmind.com/thmb/jGlvobqs1uwBDfFoSWc3v_LTEpE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/human-nerve-cell--illustration-651425163-5b205b168e1b6e003681b4af.jpg");  
+}
+.biology-content #cb3{
+    background-image: url("https://aholdencirm.files.wordpress.com/2022/03/1920_coronavirus-covid19-cedars-sinai.jpeg");
+}
+/* upon hover - the the info grid items will expand */
+.biology-content .content-box:hover{
+    width: 80vw;
+    transition: all, 1s
+}
+/* the LEFT and the RIGHT items have a margin added on hover - in their respective direction - this helps to keep them in place, and expand to the desired
+side, while staying in the grid box (as else they will overflow and overflow=hidden)rather than expanding in both directions,
+without moving, which will result to overflowing*/
+.biology-content #cb1:hover{
+    margin-left:51vw;
+}
+.biology-content #cb3:hover{
+    margin-right:51vw;
+}
+/* this is a class given to the div that holds the texual information (the see-through black box)
+it is made to be a little less than the expansion, for both visual inlay, but also to be kept smaller for a higher
+responsiveness
+*/
+.content-holder{
+    width: 65vw !important;
+    text-align: left;
+    margin:2rem;
+    background-color: rgba(0,0,0,0.9) !important;
+    padding: 1rem 3rem;
+    overflow: hidden;
+}
+/* BIOLOGY PAGE STYLE END */
+
+/* CHEMISTRY PAGE STYLE START*/
+/* mains tyling for the chemistry article table */
+.chemistry-articles-table {
+    width:90vw;
+    border-collapse:collapse;
+    padding:5px;
+    margin:0 auto;   
+}
+.chemistry-articles-table caption {
+    color: white;
+    margin: 1rem;
+}
+.chemistry-articles-table th {
+    border:1px solid #C0C0C0;
+    padding:5px;
+    background:#888787c3;
+}
+/* de-styling of the likes header in the table */
+.likesHeader{
+    color: var(--mainDimmerText) !important;
+    background: none !important;
+    border: none !important;
+}
+.chemistry-articles-table td {
+    font-size: 150%;
+    border:1px solid #C0C0C0;
+    padding:0.5rem;
+    color: var(--mainDimmerText);
+    text-align: center;
+}
+/* styles for the like buttons */
+.likeButton{
+    background-color: rgb(36, 53, 105);
+    border: none;
+    border-radius:0.5rem;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+}
+.likeButton:hover{
+    opacity: 0.7;
+}
+/* styles for the save buttons */
+.saveButton{
+    background-color: rgb(127, 121, 52);
+    border: none;
+    border-radius:0.5rem;
+    font-weight: 700;
+    padding: 0.3rem 2rem;
+}
+.saveButton:hover{
+    opacity: 0.7;
+}
+/* destyling class for the 3 utility columns */
+.noStyle{
+    border: none !important;
+    background-color: none !important;
+}
+/* style of the likes count */
+.likes{
+    color: rgb(61, 106, 134) !important;
+    font-size: 1rem !important;
+}
+/* CHEMISTRY PAGE STYLE END */
+
+/* ABOUT ME PAGE STYLE START */
+/* style for the about me container - position, color and font-size*/
+.about-me{
+    width: 75%;
+    margin: 5rem auto;
+    color: var(--mainDimmerText);
+    font-size: 150%;
+}
+
+.about-me h1{
+    font-size: 200%;
+    font-family:'Gill Sans', 'Gill Sans MT', sans-serif
+}
+
+.about-me p{
+    line-height: 2.5rem;
+    font-family:'Segoe UI', Verdana, sans-serif;
+}
+/* grid for the form - helping to keep radio buttons in line with eachother */
+#contact-form{
+    display: grid;
+    grid-template-columns: 15rem 2rem;
+    column-gap: 2rem; 
+    row-gap: 1.5rem;
+}
+/* accents for the checkboxes and radiobuttons */
+#contact-form input{
+    accent-color: rgb(55, 17, 81);
+}
+#contact-form #email{
+    width: 25rem
+}
+/* styles for the submit button */
+#contact-form button{
+    width: 15rem;
+    height:3rem;
+    border-radius: 0.3rem;
+    font-size: 100%;
+    font-weight: 800;
+    background-image: linear-gradient(180deg,rgb(90,15,15),hsl(0, 72%, 45%),rgb(90,15,15));
+}
+#contact-form button:hover{
+    opacity: 0.8;
+}
+/* ABOUT ME PAGE STYLE END */
+
+/* SAVED ARTICLES PAGE STYLE START */
+/* main section for the saved articles*/
+#saved-articles-folder{
+    color: var(--mainDimmerText);
+    margin: 5rem auto;
+    width: 60%;
+    text-align: center;
+}
+/* h2 style for the saved articles section */
+#saved-articles-folder h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif;
+    font-size: 200%;
+}
+/* container for the articles that are to be saved - grid displayed */
+#savedArticlesGridContainer{
+    display: grid;  
+}
+/* each paragraph will be a saved article, styles here */
+#savedArticlesGridContainer p{
+    border: solid 1px white;
+    padding: 1rem 0.5rem;
+    font-size: 150%;
+    background: linear-gradient(rgba(171, 143, 5, 0.9), rgba(100, 60, 18, 0.284), rgba(171, 143, 5,0.9));
+    color: rgb(0, 0, 0)  ;
+    font-weight: 600;
+    border-radius: 0.5rem;
+}
+/* each saved article will contain a heading and a link - this is the style for the links */
+#savedArticlesGridContainer a{
+    text-shadow:1px 1px black;
+    color: rgb(80, 11, 11)
+}
+/* SAVED ARTICLES PAGE STYLE END */
+
+/* STYLES USED FOR SECTIONS EXISTING IN MUTLIPLE PAGES */
+/* comment section will contain comments added by users - grid helps to maintain their position + some other positional
+properties for the visual layout */
+.commentSection{
+    display: grid;
+    color: var(--mainDimmerText);
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5rem;
+}
+/* styles for the comment box - leaves it as a blank line */
+.commentSection input{
+    border: none;
+    border-bottom: solid 2px white;
+    width: 30%;
+    height: 1.5rem;
+    background-color: var(--background);
+    font-family:'Lucida Sans', 'Lucida Sans Regular',  Verdana, sans-serif;
+    color: var(--mainDimmerText);
+}
+/* removes the border outlined when comment box is clicked on (is in focus) */
+.commentSection input:focus{ 
+outline:none!important;
+}
+/* styles for the comment submit button */
+.commentSection button{
+    margin:1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    border: none;   
+    box-shadow: 0 0 0.15rem 0.15rem rgb(29, 29, 29);
+    background-image: linear-gradient(180deg,rgb(73, 73, 73),rgb(133, 133, 133),rgb(73, 73, 73));
+}
+.commentSection button:hover{
+    opacity: 0.7;
+}

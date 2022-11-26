@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deze</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <!-- nav panel -->
+    <header>
+        <section id="logoAndPicture">
+            <h2>Science<span>Hub</span></h2>
+            <img id="websiteLogo" src="https://cdn.pixabay.com/photo/2018/03/21/07/16/learning-3245792_960_720.jpg">
+        </section>
+        <nav id="nav-bar" >
+            <!-- list, with each item being a nav to a section of the page navigation class is used keep the list items together in a flex box, with centered content-->
+            <ul id="nav-list" class="navigation">
+                <li><a id="homeNav" class="nav-links" href="#">Home</a></li>
+                <li><a id="biologyNav" class="nav-links" href="biology.html">Biology</a></li>
+                <li><a id="chemistryNav" class="nav-links" href="chemistry.html">Chemistry</a></li>
+                <li><a id="aboutMeNav" class="nav-links" href="aboutMe.html">About me</a></li>
+                <li><a id="savedArticlesNav" class="nav-links" href="savedArticles.html">Saved Articles</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- images slideshow -->
+    <div class="main-slide-container">
+        <div class="slide-flexbox">
+          <!-- 1st image = empty image used to reset the rotation in the js -->
+            <img  class="rotatingImages blank" src="">
+            <img class="rotatingImages" src="https://cdn.pixabay.com/photo/2016/11/10/02/47/blood-1813410_960_720.jpg">
+            <img class="rotatingImages" src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_960_720.jpg">
+            <img class="rotatingImages" src="https://cdn.pixabay.com/photo/2011/12/15/11/04/eagle-nebula-11172_960_720.jpg">
+            <img class="rotatingImages" src="https://cdn.pixabay.com/photo/2016/11/09/15/27/dna-1811955_960_720.jpg">
+            <img class="rotatingImages" src="https://cdn.pixabay.com/photo/2022/03/25/14/25/analysis-7091203_960_720.jpg">
+        </div>
+    </div>
+    <!-- black line right below the image slideshow (black bar with a quite in it)-->
+    <div class="below-image-gap">
+      <h2><em>“We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology.”</em> <br> Carl Sagan</h2>
+    </div>
+    <main>
+      <!-- page intro block -->
+      <section class="introduction">
+        <h1>Science As an Interest</h1>
+        <hr>
+        <p>Science and mathematics is something that is often portrayed as a dull and tedious matter. Whether in movies, books or stories, in today's world, it is a subject, repeatedly mocked and only sought after by "geeks" or "nerds".
+          <br>
+          <br>
+          Most modern education systems don't help either. Rather than being let free in the neural jungle that is curiousity, we are instead caged by the specific learning content, and bound by the pressures of attaining made-up grades for made-up assessments.
+          <br>
+          <br>
+          The result - apart from the bombardment of stress by the expectations... is that we never quite get to see the ocean of bliss, that science has to offer.
+           At most, we only get a drop, with the occassional appreciation of existence when we realise how complex things really are - but nothing more - and even then, instead of appreciating this complexity, we fear it and are left to think that it is "too hard for us".
+          <br>
+          <br>
+          This website serves as a short introduction - back to the wonders of science, in an attempt to spark your curiousity yet again!
+        </p>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+  <footer></footer>
+</html>
